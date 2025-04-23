@@ -1,0 +1,6 @@
+﻿   Qt/MSBuild: 3.3.1.1
+   Qt: 5.12.10
+  QtWidgetsApplication1.cpp
+  main.cpp
+  moc_QtWidgetsApplication1.cpp
+  QtWidgetsApplication1.vcxproj -> C:\UniBw\CompGeom\TestQt\QtWidgetsApplication1\x64\Debug\QtWidgetsApplication1.exe

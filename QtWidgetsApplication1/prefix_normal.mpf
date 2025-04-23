@@ -1,0 +1,43 @@
+;----Postprocessor by CEAD Group for NX RMR. post version 1111222_7.9 (release 10-05-2023)----
+;Part name:             C:\Users\LRT-6_Messrechner\Desktop\Varun\freeform_7_setup_1.prt
+;Programmed by:         LRT-6_Messrechner
+;Post date/time:        Wed Feb 19 2025, 14:48
+;Amount of operations:  1 (HELICAL_90DEG)
+;Total object height:   83.00mm
+;Total estimated weight:0.92kg
+;Total print time:      13min (0.2hrs)
+;---------enter overall compensations below----------
+N10 DEF REAL Z_RAFT=0; fixed compensations
+N12 DEF REAL X_COMP=100,Y_COMP=0,Z_COMP=0; user compensations
+;----------------------------------------------------
+;Initiate operation: HELICAL_90DEG (additive)
+;----------------------------------------------------
+;Orientation:         Planar, 90.00 degrees
+;Layers:              LH=3.0mm, LW=8mm
+;Milling excess:      0.0mm
+;Feedrate priority:   MINIMUM LAYER TIME
+;Minimum layer time:  
+;Actual output:       
+;Material:            CEAD Basic PP, 1.14cc/m3
+;Flow multiplier:     1.0
+;Nozzle:              CEAD_E25_TAPER_6MM
+;Extruder type:       Gearpump
+;Retract:             0.7cc
+;Deretract:           1.2cc
+;Retract time:        1.5sec
+;----------------------------------------------------
+N14 PRESETON(E,0);        Reset extruder axis value
+N16 EXTRUSIONMULTIPLIER;  Activate extrusion multiplier override
+N18 M365;                 Initiate gearpump pressure
+N20 ;ZEROBED(1);          uncomment to reset currently selected CSYS to printbed factory default
+; $P_UIFR[1]=CTRANS(X,1481.294178,Y,-682.095127,Z,80.932820):CROT(X,0.000000,Y,-0.000000,Z,0.000000)
+N22 DEVICE(EXTRUDER)
+N24 TRAORI
+N26 ;start of print toolpath
+N28 FIFOCTRL G645 SOFT COMPCAD UPATH
+N30 G54
+N32 TRANS X=X_COMP Y=Y_COMP Z=Z_COMP+Z_RAFT ELX=Y_COMP
+;-----------------------LAYER 1----------------------
+;Layer time:         
+;First layer flow multiplier: 1.70
+;----------------------------------------------------
